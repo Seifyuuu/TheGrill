@@ -1,0 +1,11 @@
+@extends("site.partials.html")
+@section("content")
+    @include("site.partials.header")
+    @include("site.partials.nav")
+    @include("site.sections.about")
+    @include("site.sections.specials")
+    @include("site.sections.chefs")
+    @include("site.sections.customers")
+    @include("site.sections.table")
+    @include("site.partials.footer")
+@endsection
