@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServiceController;
 use App\Models\About;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $abouts= About  ::all();
-    return view('home', compact("abouts"));
+    $abouts= About::all();
+    $services=Service::all();
+    return view('home', compact("abouts", "services"));
 });
 
 Route::get('/back', function () {
