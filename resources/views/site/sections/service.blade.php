@@ -9,7 +9,7 @@
                         <div class="spacer-180"></div>
                         <p class="mt30"><a href="#contact" class="btn btn-primary btn-red page-scroll">Book Now</a></p>
                     </div>
-                </div>
+                </div>              
 
                 <div class="col-sm-6 nopadding-lr dark-wrapper opaqued background-cover right-half" style="background-image: url('{{asset("img/bg/bg5.jpg")}}');">
                     <div class="dark-opaqued-half section-inner pad-sides-60 match-height text-right" data-mh="promo-inner">

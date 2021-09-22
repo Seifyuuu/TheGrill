@@ -1,0 +1,2 @@
+@extends("back.partials.html")
+

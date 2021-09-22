@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServiceController;
+use App\Models\About;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,11 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $abouts= About  ::all();
+    return view('home', compact("abouts"));
 });
 
 Route::get('/back', function () {
-    return view("site.back.partials.nav");
+    return view("back.home");
 });
 
 Route::get('/dashboard', function () {
@@ -26,3 +30,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::resource('/back/about', AboutController::class);
+Route::resource('/back/service', ServiceController::class);
