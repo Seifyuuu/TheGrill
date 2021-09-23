@@ -3,7 +3,7 @@
     @include("site.partials.header")
     @include("site.partials.nav")
     @include("site.sections.about")
-    @include("site.sections.specials")
+    @include("site.sections.service")
     @include("site.sections.chefs")
     @include("site.sections.customers")
     @include("site.sections.table")
