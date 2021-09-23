@@ -32,6 +32,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Extras <span class="pe-7s-angle-down"></span></a>
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/back">Back</a></li>
                                 <li><a href="404.html">404</a></li>
                             </ul>
                         </li>
