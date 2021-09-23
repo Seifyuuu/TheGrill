@@ -58,7 +58,8 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+
+        return view("back.abouts.edit", compact("about"));
     }
 
     /**
@@ -70,7 +71,12 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        $about->texte1 = $request->texte1;
+        $about->texte2 = $request->texte2;
+        $about->titre1 = $request->titre1;        
+        $about->titre2 = $request->titre2;
+        $about->save();
+        return redirect()->route("about.index");
     }
 
     /**

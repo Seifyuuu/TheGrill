@@ -14,7 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::all();
+        return view("back.services.allServices", compact("services"));
     }
 
     /**
@@ -57,7 +58,7 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        //
+        return view("back.services.edit", compact("service"));
     }
 
     /**
@@ -69,7 +70,12 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        $service->texteBtn = $request->texteBtn;
+        $service->texte = $request->texte;
+        $service->titre1 = $request->titre1;        
+        $service->titre2 = $request->titre2;
+        $service->save();
+        return redirect()->route("service.index");
     }
 
     /**
