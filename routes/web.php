@@ -5,6 +5,7 @@ use App\Http\Controllers\ServiceController;
 use App\Models\About;
 use App\Models\Service;
 use App\Models\Chef;
+use App\Models\Footer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,8 @@ Route::get('/', function () {
     $abouts= About::all();
     $services=Service::all();
     $chefs = Chef::all();
-    return view('home', compact("abouts", "services","chefs"));
+    $footers = Footer::all();
+    return view('home', compact("abouts", "services","chefs","footers"));
 });
 
 Route::get('/back', function () {

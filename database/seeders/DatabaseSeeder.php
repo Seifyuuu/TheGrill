@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             ChefSeeder::class,
             IconSeeder::class,
             SociallinkSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            FooterSeeder::class
         ]);
     }
 }
