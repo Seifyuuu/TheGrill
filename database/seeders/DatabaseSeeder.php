@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             IconSeeder::class,
             SociallinkSeeder::class,
             ServiceSeeder::class,
+            FooterSeeder::class,
             CustomerSeeder::class,
             TableSeeder::class,
             HeureSeeder::class

@@ -8,6 +8,7 @@ use App\Http\Controllers\TableController;
 use App\Models\About;
 use App\Models\Service;
 use App\Models\Chef;
+use App\Models\Footer;
 use App\Models\Customer;
 use App\Models\Heure;
 use App\Models\Table;
@@ -31,7 +32,8 @@ Route::get('/', function () {
     $customers = Customer::all();
     $tables = Table::all();
     $heures = Heure::all();
-    return view('home', compact("abouts", "services","chefs", "customers", "tables", "heures"));
+    $footers = Footer::all();
+    return view('home', compact("abouts", "services","chefs", "customers", "tables","footers", "heures"));
 });
 
 Route::get('/back', function () {
