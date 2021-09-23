@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ChefController;
+use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HeureController;
+use App\Http\Controllers\IconController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SociallinkController;
 use App\Http\Controllers\TableController;
 use App\Models\About;
 use App\Models\Service;
@@ -48,8 +52,12 @@ require __DIR__.'/auth.php';
 
 Route::resource('/back/about', AboutController::class);
 Route::resource('/back/service', ServiceController::class);
+Route::resource('/back/chef', ChefController::class);
+Route::resource('/back/icon', IconController::class);
+Route::resource('/back/sociallink', SociallinkController::class);
 Route::resource('/back/customer', CustomerController::class);
 Route::resource('/back/table', TableController::class);
 Route::resource('/back/heure', HeureController::class);
+Route::resource('/back/footer', FooterController::class);
 
 
