@@ -13,50 +13,70 @@
             <div class="row">
                 <div class="col-xs-12">
                     <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                        
+                        
+                        
+                        
+                        
+                    
+
+
+
+
+
+                        @foreach ($customers as $item )
                         <li>
                             <div class="row">
                                 <div class="col-xs-8 col-xs-offset-2 item-caption">
                                     <div class="row">
                                         <div class="col-sm-2">
-                                            <img src="{{asset("img/team/small1.jpg")}}" class="img-responsive testimonial-author" alt="">
+                                            <img src="{{asset($item->photo)}}" class="img-responsive testimonial-author" alt="">
                                         </div>
                                         <div class="col-sm-10">                                                
-                                            <h4>Charles Davies</h4>
-                                            <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
+                                            <h4>{{$item->name}}</h4>
+                                            <p>{{$item->text}}</p>
                                             <ul class="list-inline">
+                                                @if ($item->rating == 1)
                                                 <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                @endif
+                                                    @if ($item->rating == 2)
+                                                    <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                    <li><i class="fa fa-star theme-accent-color"></i></li>
+
+                                                    @endif
+                                                        @if ($item->rating == 3)
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                        <li><i class="fa fa-star theme-accent-color"></i></li>
+
+                                                        @endif
+                                                            @if ($item->rating == 4)
+                                                            <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                            <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                            <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                            <li><i class="fa fa-star theme-accent-color"></i></li>
+
+                                                            @endif
+                                                                @if ($item->rating == 5)
+                                                                <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                                <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                                <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                                <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                                <li><i class="fa fa-star theme-accent-color"></i></li>
+                                                                @endif
+                                                
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-xs-8 col-xs-offset-2 item-caption">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <img src="{{asset('img/team/small1.jpg')}}" class="img-responsive testimonial-author" alt="">
-                                        </div>
-                                        <div class="col-sm-10">                                                
-                                            <h4>Charles Davies</h4>
-                                            <p>Compellingly customize highly efficient outsourcing with premium quality vectors. Conveniently target customer directed relationships after highly efficient process improvements.</p>
-                                            <ul class="list-inline">
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                                <li><i class="fa fa-star theme-accent-color"></i></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        @endforeach
+                        
+
+
+
+
                     </ul>
                 </div>
             </div>

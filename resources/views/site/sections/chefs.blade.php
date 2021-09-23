@@ -26,7 +26,6 @@
                                         <div class="vertical-center">
                                             <h3 class="smoothie"><a href="single-portfolio.html" title="view project">{{$chef->name}}</a></h3>
                                             <ul class="smoothie list-inline social-links wow fadeIn" data-wow-delay="0.2s">
-                                                {{dd($chef->sociallinks())}}
                                                 @foreach ($chef->sociallinks() as $link )
                                                 <li>
                                                     <a href="{{$link->link}}"><i class="fa fa-{{$link->icon->name}}"></i></a>
