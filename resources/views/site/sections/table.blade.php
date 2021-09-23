@@ -12,13 +12,17 @@
         <div class="container">
             <div class="row mb100"> 
                 <!-- Address, Phone & Email -->
+                @foreach ($tables as $item )
+                    
                 <div class="col-md-5 col-md-offset-1 wow fadeIn">
                     <h3 class="mb30">Address</h3>
-                    <p class="lead">Florence Building</p>
-                    <p class="lead">Kings Square<br>
-                    London, LDN1 23 </p>
-                    <p class="lead">+448754 658 048<br>
+                    <p class="lead">{{$item->name}}</p>
+                    <p class="lead">{{$item->address}}<br>
+                    {{$item->address2}} </p>
+                    <p class="lead">{{$item->num}}<br>
                 </div>
+                @endforeach
+
 
                 <div class="col-md-5 col-sm-7 wow fadeIn">
                     <h3 class="mb30">Opening Times</h3>
@@ -36,13 +40,9 @@
                       </div>
                       <div class="col-xs-7">
                         <ul class="list-unstyled">
-                          <li>11:00 AM - 11:00 PM</li>
-                          <li>11:00 AM - 11:00 PM</li>
-                          <li>11:00 AM - 11:00 PM</li>
-                          <li>11:00 AM - 11:00 PM</li>
-                          <li>11:00 AM - 1:00 AM</li>
-                          <li>11:00 AM - 1:00 AM</li>
-                          <li>11:00 AM - 1:00 AM</li>
+                            @foreach ($heures as $item )
+                            <li>{{$item->time}}</li>
+                            @endforeach
                         </ul>
                       </div>
                     </div>
