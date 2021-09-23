@@ -46,8 +46,8 @@ require __DIR__.'/auth.php';
 
 Route::resource('/back/about', AboutController::class);
 Route::resource('/back/service', ServiceController::class);
-Route::resource('/back/customers', CustomerController::class);
-Route::resource('/back/tables', TableController::class);
-Route::resource('/back/heures', HeureController::class);
+Route::resource('/back/customer', CustomerController::class);
+Route::resource('/back/table', TableController::class);
+Route::resource('/back/heure', HeureController::class);
 
 
