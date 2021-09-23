@@ -14,20 +14,26 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="3" data-items-tablet="[768,2]" data-items-mobile="[479,1]">
+                            @foreach ($chefs as $chef )
+                                
                             <li>
                                 <div class="row hover-item">
                                     <div class="col-xs-12">
-                                        <img src="{{asset("img/team/1.jpg")}}" class="img-responsive smoothie" alt="">
+                                        <img src="{{asset("img/team/".$chef->img)}}" class="img-responsive smoothie" alt="">
                                     </div>
                                     <div class="col-xs-12 overlay-item-caption smoothie"></div>
                                     <div class="col-xs-12 hover-item-caption smoothie">
                                         <div class="vertical-center">
-                                            <h3 class="smoothie"><a href="single-portfolio.html" title="view project">John Doe</a></h3>
+                                            <h3 class="smoothie"><a href="single-portfolio.html" title="view project">{{$chef->name}}</a></h3>
                                             <ul class="smoothie list-inline social-links wow fadeIn" data-wow-delay="0.2s">
+                                                {{dd($chef->sociallinks())}}
+                                                @foreach ($chef->sociallinks() as $link )
                                                 <li>
-                                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                                    <a href="{{$link->link}}"><i class="fa fa-{{$link->icon->name}}"></i></a>
                                                 </li>
-                                                <li>
+                                                @endforeach
+
+                                                {{-- <li>
                                                     <a href="#"><i class="fa fa-pinterest"></i></a>
                                                 </li>
                                                 <li>
@@ -41,14 +47,15 @@
                                                 </li>
                                                 <li>
                                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </div>
                                     </div>
                                     <span class="col-xs-12 theme-accent-color-bg hover-bar"></span>
                                 </div>
                             </li>
-                            <li>
+                            @endforeach
+                            {{-- <li>
                                 <div class="row hover-item">
                                     <div class="col-xs-12">
                                         <img src="{{asset("img/team/2.jpg")}}" class="img-responsive smoothie" alt="">
@@ -143,7 +150,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="#"><i class="fa fa-linkedin"></i></a>
-                                                </li>
+                                                </li> --}}
                                             </ul>
                                         </div>
                                         <span class="theme-accent-color-bg hover-bar"></span>
