@@ -17,7 +17,7 @@ class Sociallink extends Model
         return $this->belongsTo(Chef::class);
     }
     public function icon(){
-        return $this->hasOne(Icon::class);
+        return $this->belongsTo(Icon::class);
 
     }
 
