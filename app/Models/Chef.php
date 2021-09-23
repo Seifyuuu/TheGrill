@@ -15,7 +15,9 @@ class Chef extends Model
     protected $fillable = ["name","img"];
 
 
-
+    public function icons(){
+        return $this->hasMany(Icon::class);
+    }
     public function sociallinks(){
 
         return $this->hasMany(Sociallink::class);

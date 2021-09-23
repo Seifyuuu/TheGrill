@@ -13,8 +13,10 @@ class Icon extends Model
 
     protected $fillable = ["name"];
 
-
+    public function chef(){
+        return $this->belongsTo(Chef::class);
+    }
     public function sociallinks(){
-        return $this->belongsToMany(Sociallink::class);
+        return $this->hasMany(Sociallink::class);
     }
 }
