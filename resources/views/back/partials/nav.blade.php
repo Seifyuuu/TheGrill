@@ -104,7 +104,7 @@
 
         <li class="border border-light w-100 mt-2"></li>
         <li class="mt-3">
-            <a href="/home">
+            <a href="/">
                 <i class='bx bx-home'></i>
                 <span class="tooltip">Home</span>
             </a>

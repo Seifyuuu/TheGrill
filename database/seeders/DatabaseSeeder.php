@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             CustomerSeeder::class,
             TableSeeder::class,
-            HeureSeeder::class
+            HeureSeeder::class,
+            CustomerSeeder::class
         ]);
     }
 }

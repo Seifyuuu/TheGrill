@@ -14,7 +14,8 @@ class TableController extends Controller
      */
     public function index()
     {
-        //
+        $tables = Table::all();
+        return view("back.tables.allTables", compact("tables"));
     }
 
     /**
@@ -57,7 +58,7 @@ class TableController extends Controller
      */
     public function edit(Table $table)
     {
-        //
+        return view("back.tables.edit", compact("table"));
     }
 
     /**
@@ -69,7 +70,12 @@ class TableController extends Controller
      */
     public function update(Request $request, Table $table)
     {
-        //
+        $table->name = $request->name;
+        $table->address = $request->address;
+        $table->address2 = $request->address2;        
+        $table->num = $request->num;
+        $table->save();
+        return redirect()->route("table.index"); 
     }
 
     /**
