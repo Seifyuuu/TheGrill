@@ -85,20 +85,22 @@
                     <div class="name">{{ Auth::user() !== null ? Auth::user()->name : '' }}</div>
                     <div class="job">Web designer</div>
                 </div>
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+    
+                    <button type="submit">
+                        <a href="#">
+    
+                            <i class='bx bx-log-out' id="log_out"></i>
+    
+    
+                        </a>
+    
+                    </button>
+                </form>
             </div>
-            <form action="{{ route('logout') }}" method="post">
-                @csrf
-
-                <button type="submit">
-                    <a href="#">
-
-                        <i class='bx bx-log-out' id="log_out"></i>
-                        <span class="links_name">Logout</span>
-                    </a>
-                </button>
-            </form>
             {{-- <span class="tooltip">Logout</span> --}}
-
+        </li>
 
         <li class="border border-light w-100 mt-2"></li>
         <li class="mt-3">

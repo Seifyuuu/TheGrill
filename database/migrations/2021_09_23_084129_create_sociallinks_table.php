@@ -17,7 +17,8 @@ class CreateSociallinksTable extends Migration
             $table->id();
             $table->string('link');
             $table->foreignId('icon_id')->constrained('icons','id');
-            $table->foreignId('chef_id')->constrained('chefs','id');
+            $table->foreignId('chef_id')->nullable()->constrained('chefs','id');
+            $table->foreignId('footer_id')->nullable()->constrained('footers','id');
             $table->timestamps();
         });
     }

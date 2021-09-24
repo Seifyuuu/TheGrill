@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Chef;
 use App\Models\Sociallink;
+use App\Models\Footer;
 class Icon extends Model
 {
     use HasFactory;
@@ -20,7 +21,7 @@ class Icon extends Model
         return $this->hasMany(Sociallink::class);
     }
 
-    public function footers(){
+    public function footer(){
         return $this->belongsTo(Footer::class);
     }
 }

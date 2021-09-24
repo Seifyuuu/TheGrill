@@ -16,6 +16,7 @@ class CreateIconsTable extends Migration
         Schema::create('icons', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('footer_id')->nullable()->constrained('footers','id');
             $table->timestamps();
         });
     }
