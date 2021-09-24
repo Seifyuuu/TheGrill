@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chef;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class ChefController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class ChefController extends Controller
      */
     public function index()
     {
-        //
+        $chefs = Chef::all();
+        return view('back.chefs.allChefs',compact('chefs'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ChefController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.chefs.allChefs');
     }
 
     /**
@@ -33,9 +34,14 @@ class ChefController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $rq)
     {
-        //
+        $chef = new Chef;
+        $rq->file("img")->storePublicly("img","public");
+        $chef->name = $rq->name;
+        $chef->img =  $rq->file('img')->hashName();
+        $chef->save();
+        return redirect()->route('chef.index');
     }
 
     /**
@@ -57,7 +63,7 @@ class ChefController extends Controller
      */
     public function edit(Chef $chef)
     {
-        //
+        return view('back.chefs.edit',compact('chef'));
     }
 
     /**
@@ -67,9 +73,17 @@ class ChefController extends Controller
      * @param  \App\Models\Chef  $chef
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chef $chef)
+    public function update(Request $rq, Chef $chef)
     {
-        //
+        
+        Storage::disk("public")->delete("img/".$chef->img);
+        $chef->name = $rq->name;
+        $chef->img =  $rq->file('img')->hashName();
+        $rq->file("photo")->storePublicly("img","public");
+        $chef->save();
+        return redirect()->route('chef.index');
+
+        
     }
 
     /**
@@ -80,6 +94,8 @@ class ChefController extends Controller
      */
     public function destroy(Chef $chef)
     {
-        //
+        $chef->delete();
+
+        return redirect()->back();
     }
 }

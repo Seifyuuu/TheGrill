@@ -22,7 +22,7 @@
         </li>
 
         <li>
-            <a href="/back/chef" class="text-light">
+            <a href="{{route('chef.index')}}" class="text-light">
                 <i class='bx bx-user-pin'></i>
                 <span class="links_name">Chef</span>
             </a>

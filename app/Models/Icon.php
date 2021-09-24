@@ -17,7 +17,7 @@ class Icon extends Model
     public function chef(){
         return $this->belongsTo(Chef::class);
     }
-    public function sociallinks(){
+    public function sociallink(){
         return $this->hasMany(Sociallink::class);
     }
 
