@@ -15,7 +15,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-
+        $customers = Customer::all();
+        return view("back.customers.allCustomers", compact("customers"));
     }
 
     /**
@@ -25,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view("back.customers.create");
     }
 
     /**
@@ -36,7 +37,13 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = new Customer();
+        $customer->name = $request->name;
+        $customer->photo = $request->photo;
+        $customer->text = $request->text;
+        $customer->rating = $request->rating;
+        $customer->save();
+        return redirect()->route("customer.index");
     }
 
     /**
@@ -58,7 +65,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view("back.customers.edit", compact("customer"));
     }
 
     /**
@@ -70,7 +77,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $customer->photo = $request->photo;
+        $customer->name = $request->name;
+        $customer->text = $request->text;        
+        $customer->rating = $request->rating;
+        $customer->save();
+        return redirect()->route("customer.index"); 
     }
 
     /**
@@ -81,6 +93,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+        return redirect()->route("customer.index");
     }
 }

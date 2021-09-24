@@ -14,7 +14,8 @@ class HeureController extends Controller
      */
     public function index()
     {
-        //
+        $heures = Heure::all();
+        return view("back.tables.allHours", compact("heures"));
     }
 
     /**
@@ -57,7 +58,7 @@ class HeureController extends Controller
      */
     public function edit(Heure $heure)
     {
-        //
+        return view("back.tables.editHours", compact("heure"));
     }
 
     /**
@@ -69,7 +70,10 @@ class HeureController extends Controller
      */
     public function update(Request $request, Heure $heure)
     {
-        //
+        $heure->jour = $request->jour;
+        $heure->time = $request->time;
+        $heure->save();
+        return redirect()->route("heure.index"); 
     }
 
     /**

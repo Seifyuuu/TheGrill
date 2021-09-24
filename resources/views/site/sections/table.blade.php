@@ -29,13 +29,9 @@
                     <div class="row">
                       <div class="col-xs-5">
                         <ul class="list-unstyled weekdays">
-                          <li>Monday</li>
-                          <li>Tuesday</li>
-                          <li>Wednesday</li>
-                          <li>Thursday</li>
-                          <li>Friday</li>
-                          <li>Saturday</li>
-                          <li>Sunday</li>
+                        @foreach ($heures as $item )
+                            <li>{{$item->jour}}</li>
+                        @endforeach
                         </ul>
                       </div>
                       <div class="col-xs-7">
