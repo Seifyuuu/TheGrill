@@ -16,7 +16,7 @@ class CreateSociallinksTable extends Migration
         Schema::create('sociallinks', function (Blueprint $table) {
             $table->id();
             $table->string('link');
-            $table->foreignId('icon_id')->constrained('icons','id');
+            $table->foreignId('icon_id')->nullable()->constrained('icons','id')->onDelete('cascade');
             $table->foreignId('chef_id')->nullable()->constrained('chefs','id');
             $table->foreignId('footer_id')->nullable()->constrained('footers','id');
             $table->timestamps();

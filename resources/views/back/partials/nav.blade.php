@@ -68,7 +68,7 @@
         <span class="tooltip">Heures</span>
         </li>
         <li>
-            <a href="/back/footer" class="text-light">
+            <a href="{{route('footer.index')}}" class="text-light">
                 <i class='bx bx-chat'></i>
                 <span class="links_name">Footer</span>
             </a>

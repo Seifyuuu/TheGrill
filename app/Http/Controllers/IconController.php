@@ -80,6 +80,8 @@ class IconController extends Controller
      */
     public function destroy(Icon $icon)
     {
-        //
+        $icon->delete();
+
+        return redirect()->back();
     }
 }

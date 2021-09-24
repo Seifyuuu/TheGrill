@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Chef;
 use App\Models\Sociallink;
-use App\Models\Footer;
 class Icon extends Model
 {
     use HasFactory;
@@ -17,7 +16,7 @@ class Icon extends Model
     public function chef(){
         return $this->belongsTo(Chef::class);
     }
-    public function sociallink(){
+    public function sociallinks(){
         return $this->hasMany(Sociallink::class);
     }
 

@@ -14,7 +14,9 @@ class FooterController extends Controller
      */
     public function index()
     {
-        //
+        $footers= Footer::all();
+
+        return view('back.footers.allFooters',compact('footers'));
     }
 
     /**
@@ -57,7 +59,7 @@ class FooterController extends Controller
      */
     public function edit(Footer $footer)
     {
-        //
+        return view('back.footers.edit',compact('footer'));
     }
 
     /**
@@ -67,9 +69,11 @@ class FooterController extends Controller
      * @param  \App\Models\Footer  $footer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Footer $footer)
+    public function update(Request $rq, Footer $footer)
     {
-        //
+        $footer->copyright = $rq->copyright;
+        $footer->save();
+        return redirect()->route('footer.index');
     }
 
     /**
@@ -80,6 +84,8 @@ class FooterController extends Controller
      */
     public function destroy(Footer $footer)
     {
-        //
+        $footer->delete();
+
+        return redirect()->back();
     }
 }
