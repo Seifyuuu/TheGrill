@@ -9,6 +9,7 @@ use App\Http\Controllers\IconController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SociallinkController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\UserController;
 use App\Models\About;
 use App\Models\Service;
 use App\Models\Chef;
@@ -42,7 +43,7 @@ Route::get('/', function () {
 
 Route::get('/back', function () {
     return view("back.home");
-});
+})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -59,7 +60,7 @@ Route::resource('/back/customer', CustomerController::class);
 Route::resource('/back/table', TableController::class);
 Route::resource('/back/heure', HeureController::class);
 Route::resource('/back/footer', FooterController::class);
-
+Route::resource('/back/user', UserController::class);
 
 
 
