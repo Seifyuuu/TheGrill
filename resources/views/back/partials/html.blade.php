@@ -8,7 +8,7 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
          <!-- Boxicons CDN Link -->
-        {{-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> --}}
+         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
         <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
@@ -30,7 +30,7 @@
             type="text/css"
         />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
+        {{-- <link href="{{asset('css/styles.css')}}" rel="stylesheet" /> --}}
 
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
     <!-- Custom Fonts -->
@@ -60,11 +60,11 @@
     </div>
         @include("back.partials.footer")
     
-    <script src="{{asset("assets/js/jquery.js")}}"></script>
+    {{-- <script src="{{asset("assets/js/jquery.js")}}"></script>
     <script src="{{asset("assets/js/bootstrap.min.js")}}"></script>
     <script src="{{asset("assets/js/plugins.js")}}"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="{{asset("assets/js/init.js")}}"></script>
+    <script src="{{asset("assets/js/init.js")}}"></script> --}}
     
 </body>
 </html>

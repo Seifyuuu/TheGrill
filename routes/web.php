@@ -43,7 +43,7 @@ Route::get('/', function () {
 
 Route::get('/back', function () {
     return view("back.home");
-})->middleware(['auth']);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
