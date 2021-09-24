@@ -15,22 +15,28 @@ class IconSeeder extends Seeder
     {
         DB::table('icons')->insert([
             [
-                "name"=>"twitter"
+                "name"=>"twitter",
+                "footer_id"=>1
             ],
             [
-                "name"=>"pinterest"
+                "name"=>"pinterest",
+                "footer_id"=>1
             ],
             [
-                "name"=>"dribbble"
+                "name"=>"dribbble",
+                "footer_id"=>1
             ],
             [
-                "name"=>"facebook"
+                "name"=>"facebook",
+                "footer_id"=>1
             ],
             [
-                "name"=>"behance"
+                "name"=>"behance",
+                "footer_id"=>1
             ],
             [
-                "name"=>"linkedin"
+                "name"=>"linkedin",
+                "footer_id"=>1
             ],
         ]);
     }

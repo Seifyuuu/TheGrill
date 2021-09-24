@@ -18,101 +18,163 @@ class SociallinkSeeder extends Seeder
                 "link"=>"#",
                 "icon_id"=>1,
                 "chef_id"=>1,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>2,
                 "chef_id"=>1,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>3,
                 "chef_id"=>1,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>4,
                 "chef_id"=>1,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>5,
                 "chef_id"=>1,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>1,
                 "chef_id"=>2,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>2,
                 "chef_id"=>2,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>3,
                 "chef_id"=>2,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>4,
                 "chef_id"=>2,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>5,
                 "chef_id"=>2,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>1,
                 "chef_id"=>3,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>2,
                 "chef_id"=>3,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>3,
                 "chef_id"=>3,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>4,
                 "chef_id"=>3,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>5,
                 "chef_id"=>3,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>1,
                 "chef_id"=>4,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>2,
                 "chef_id"=>4,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>3,
                 "chef_id"=>4,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>4,
                 "chef_id"=>4,
+                "footer_id"=>null
             ],
             [
                 "link"=>"#",
                 "icon_id"=>5,
                 "chef_id"=>4,
+                "footer_id"=>null
+            ],
+            [
+                "link"=>"#",
+                "icon_id"=>1,
+                "chef_id"=>null,
+                "footer_id"=>1
+                
+            ],
+            [
+                "link"=>"#",
+                "icon_id"=>2,
+                "chef_id"=>null,
+                "footer_id"=>1
+                
+            ],
+            [
+                "link"=>"#",
+                "icon_id"=>3,
+                "chef_id"=>null,
+                "footer_id"=>1
+                
+            ],
+            [
+                "link"=>"#",
+                "icon_id"=>4,
+                "chef_id"=>null,
+                "footer_id"=>1
+                
+            ],
+            [
+                "link"=>"#",
+                "icon_id"=>5,
+                "chef_id"=>null,
+                "footer_id"=>1
+                
+            ],
+            [
+                "link"=>"#",
+                "icon_id"=>6,
+                "chef_id"=>null,
+                "footer_id"=>1
+                
             ],
  
             ]);

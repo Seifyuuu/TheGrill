@@ -12,25 +12,13 @@
             </div>
             <div class="col-md-12">
                 <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s">
-                    
-                    <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
+                    @foreach ($footer->icons()->get() as $icon )
+
+                        <li>
+                            <a href="{{$footer->sociallinks()->get()[$icon->id-1]}}"><i class="fa fa-{{$icon->name}}"></i></a>
+                        </li>
+                    @endforeach
+                   
                 </ul>
             </div>
         </div>

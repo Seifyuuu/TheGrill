@@ -30,4 +30,5 @@ class CreateChefsTable extends Migration
     {
         Schema::dropIfExists('chefs');
     }
+
 }
