@@ -74,6 +74,13 @@
             </a>
             <span class="tooltip">Footer</span>
         </li>
+        <li>
+            <a href="/back/user" class="text-light">
+                <i class='bx bx-user'></i>
+                <span class="links_name">Users</span>
+            </a>
+            <span class="tooltip">Users</span>
+        </li>
 
 
         <li class="profile">
