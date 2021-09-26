@@ -7,7 +7,7 @@
 <div class="card my-3" style="width: 18rem;">
   <img src="{{asset("img/team/".$chef->img)}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{$chef->name}} Test</h5>
+    <h5 class="card-title">{{$chef->name}}</h5>
     <p class="card-text">
         <ul class="d-flex justify-content-between w-75 my-3" >
             @foreach ($chef->sociallinks as $link )

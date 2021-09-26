@@ -14,23 +14,33 @@
 @endif
 
 
- <h1 class="text-center my-3"> Update Data Chef</h1>
+ <h1 class="text-center my-3"> Create Data Chef</h1>
 
-<form action="{{route('chef.update',$chef->id)}}" method="post" enctype="multipart/form-data">
+<form action="{{route('chef.store')}}" method="post" enctype="multipart/form-data">
     @csrf
-    @method('PUT')
 
 <div class="mb-3">
     <label for="name" class="form-label">Nom </label>
-    <input type="text" value = "{{$chef->name}}" class="form-control" id="name" name="name">
+    <input type="text" value = "{{old('name')}}" class="form-control" id="name" name="name">
 </div>
 
 <div class="mb-3">
     <label for="img" class="form-label">Photo</label>
     <input type="file"   class="form-control" id="img" name="img" >
 </div>
-<div class="mb-3">
-    <p>Icon lien social</p>
+
+<div class="mb-3" id="liens">
+<a class="btn btn-info" onclick="()=>{
+
+    var node = <div class='d-flex'>Nom reseau social:<input type='texte'> lien:<input type='texte'> </div>;
+    document.getElementById('liens').insertBefore(node);
+} "> Ajouter lien social</a>
+</div>
+
+
+{{-- <div class="mb-3">
+    <p>lien social</p>
+
     @foreach ($chef->sociallinks as $link )
     <div class="d-flex flex-column p-3">
 
@@ -39,19 +49,12 @@
             <label for="link" class="form-label">{{$link->icon->name}}</label>
         </div>  
            Link: <input type="text" value ="{{$link->link}}" class="form-control" id="link" name="link" >
-            {{-- <form action="{{route('sociallink.destroy',$link->id)}}" method="post" class="d-flex justify-content-center my-3">
-                @csrf
-                @method('DELETE')
 
-                <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-            </form> --}}
-            <div class="d-flex justify-content-center my-3">
-                             <a href="{{route('sociallink.edit',$link->id)}}" class="btn btn-warning mr-2"><i class="fas fa-edit"></i></a>
-            </div>
+
 
     </div>
     @endforeach
-</div>
+</div> --}}
 
 
 <button type="submit" class="btn btn-primary">Submit</button>

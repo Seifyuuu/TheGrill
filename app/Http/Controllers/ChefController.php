@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Chef;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Stmt\Foreach_;
+
 class ChefController extends Controller
 {
     /**
@@ -25,7 +27,7 @@ class ChefController extends Controller
      */
     public function create()
     {
-        return view('back.chefs.allChefs');
+        return view('back.chefs.create');
     }
 
     /**
@@ -37,7 +39,7 @@ class ChefController extends Controller
     public function store(Request $rq)
     {
         $chef = new Chef;
-        $rq->file("img")->storePublicly("img","public");
+        $rq->file("img")->storePublicly("img/team/","public");
         $chef->name = $rq->name;
         $chef->img =  $rq->file('img')->hashName();
         $chef->save();
@@ -76,10 +78,10 @@ class ChefController extends Controller
     public function update(Request $rq, Chef $chef)
     {
         
-        Storage::disk("public")->delete("img/".$chef->img);
+        Storage::disk("public")->delete("img/team/$chef->img");
         $chef->name = $rq->name;
         $chef->img =  $rq->file('img')->hashName();
-        $rq->file("photo")->storePublicly("img","public");
+        $rq->file("img")->storePublicly("img/team/","public");
         $chef->save();
         return redirect()->route('chef.index');
 
@@ -94,6 +96,13 @@ class ChefController extends Controller
      */
     public function destroy(Chef $chef)
     {
+        // dd("img/team/$chef->img");
+        Storage::disk("public")->delete("img/team/$chef->img");
+        foreach($chef->sociallinks as $link){
+            $link->delete();
+        }
+
+
         $chef->delete();
 
         return redirect()->back();

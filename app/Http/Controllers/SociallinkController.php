@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sociallink;
+use App\Models\Chef;
+use App\Models\Footer;
 use Illuminate\Http\Request;
 
 class SociallinkController extends Controller
@@ -14,7 +16,8 @@ class SociallinkController extends Controller
      */
     public function index()
     {
-        //
+        $sociallinks = Sociallink::all();
+        return view('back.sociallinks.allSociallinks',compact('sociallinks'));
     }
 
     /**
@@ -24,7 +27,9 @@ class SociallinkController extends Controller
      */
     public function create()
     {
-        //
+        $chefs = Chef::all();
+        $footers = Footer::all();
+        return view('back.sociallinks.create', compact('chefs','footers'));
     }
 
     /**
@@ -57,7 +62,7 @@ class SociallinkController extends Controller
      */
     public function edit(Sociallink $sociallink)
     {
-        //
+        return view('back.sociallinks.edit',compact('sociallink'));
     }
 
     /**
@@ -67,9 +72,13 @@ class SociallinkController extends Controller
      * @param  \App\Models\Sociallink  $sociallink
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sociallink $sociallink)
+    public function update(Request $rq, Sociallink $sociallink)
     {
-        //
+        
+        $sociallink->link = $rq->link;
+        $sociallink->icon_id= $rq->icon_id;
+        $sociallink->save();
+        return redirect()->route('chef.edit',$sociallink->chef->id);
     }
 
     /**
@@ -80,6 +89,7 @@ class SociallinkController extends Controller
      */
     public function destroy(Sociallink $sociallink)
     {
-        //
+        $sociallink->delete();
+        return redirect()->back();
     }
 }

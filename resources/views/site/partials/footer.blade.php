@@ -11,11 +11,10 @@
                 <span class="copyright">{{$footer->copyright}}</span>
             </div>
             <div class="col-md-12">
-                <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s">
-                    @foreach ($footer->icons()->get() as $icon )
-
+                        <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s" >
+                    @foreach ($footer->sociallinks()->where('footer_id','!=',null)->get() as $link )
                         <li>
-                            <a href="{{$footer->sociallinks()->get()[$icon->id-1]}}"><i class="fa fa-{{$icon->name}}"></i></a>
+                            <a href="{{$link}}"><i class="fa fa-{{$link->icon->name}}"></i></a>
                         </li>
                     @endforeach
                    

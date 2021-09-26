@@ -34,12 +34,12 @@
 
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
     <!-- Custom Fonts -->
-    <link href="{{asset("assets/font-awesome-4.1.0/css/font-awesome.min.css")}}"rel="stylesheet" type="text/css">
-    <link href={{asset("assets/css/pe-icons.css")}} rel="stylesheet">
+    {{-- {{-- <link href="{{asset("assets/font-awesome-4.1.0/css/font-awesome.min.css")}}"rel="stylesheet" type="text/css"> --}}
+    {{-- <link href={{asset("assets/css/pe-icons.css")}} rel="stylesheet"> --}} --}}
     <!-- Bootstrap Core CSS -->
-    <link href={{asset("assets/css/bootstrap.min.css")}} rel="stylesheet">
+    {{-- <link href={{asset("assets/css/bootstrap.min.css")}} rel="stylesheet">
     <link href={{asset("assets/css/animate.css")}} rel="stylesheet">
-    <link href={{asset("assets/css/plugins.css")}} rel="stylesheet">
+    <link href={{asset("assets/css/plugins.css")}} rel="stylesheet"> --}}
     <title>Document</title>
 </head>
 <body >
@@ -59,12 +59,12 @@
         </div>
     </div>
         @include("back.partials.footer")
-    
+{{--     
     <script src="{{asset("assets/js/jquery.js")}}"></script>
     <script src="{{asset("assets/js/bootstrap.min.js")}}"></script>
     <script src="{{asset("assets/js/plugins.js")}}"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="{{asset("assets/js/init.js")}}"></script>
+    <script src="{{asset("assets/js/init.js")}}"></script> --}}
     
 </body>
 </html>
