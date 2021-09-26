@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class CustomerController extends Controller
 {
@@ -39,10 +39,11 @@ class CustomerController extends Controller
     {
         $customer = new Customer();
         $customer->name = $request->name;
-        $customer->photo = $request->photo;
+        $customer->photo = $request->file("photo")->hashName();
         $customer->text = $request->text;
         $customer->rating = $request->rating;
         $customer->save();
+        $request->file("photo")->storePublicly("img", "public");
         return redirect()->route("customer.index");
     }
 
@@ -77,11 +78,13 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        $customer->photo = $request->photo;
+        Storage::disk("public")->delete("img/" . $customer->photo);
+        $customer->photo = $request->file("photo")->hashName();
         $customer->name = $request->name;
         $customer->text = $request->text;        
         $customer->rating = $request->rating;
         $customer->save();
+        $request->file("photo")->storePublicly("img", "public");
         return redirect()->route("customer.index"); 
     }
 
@@ -93,6 +96,7 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
+        Storage::disk("public")->delete("img/" . $customer->photo);
         $customer->delete();
         return redirect()->route("customer.index");
     }
