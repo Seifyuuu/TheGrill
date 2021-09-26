@@ -30,7 +30,11 @@
                                 <div class="col-xs-8 col-xs-offset-2 item-caption">
                                     <div class="row">
                                         <div class="col-sm-2">
-                                            <img src="{{asset($item->photo)}}" class="img-responsive testimonial-author" alt="">
+                                            @if (Storage::disk('public')->exists('img/' . $item->photo))
+                                            <img class ="img-responsive testimonial-author" src="{{ asset('img/' . $item->photo) }}" alt="">
+                                             @else
+                                            <img class ="img-responsive testimonial-author" src="{{ asset($item->photo) }}" alt="">
+                                            @endif
                                         </div>
                                         <div class="col-sm-10">                                                
                                             <h4>{{$item->name}}</h4>

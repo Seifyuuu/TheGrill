@@ -8,7 +8,7 @@
     <br><br><br>
     <div>
     <label for="">Photo:</label>
-    <input type="text" name="photo" value="{{$customer->photo}}">
+    <input type="file" name="photo" value="{{$customer->photo}}">
     <br>
     <label for="">Name :</label>
     <input type="text" name="name" value="{{$customer->name}}">

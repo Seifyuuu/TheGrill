@@ -11,7 +11,12 @@
 @foreach ($customers as $item )
     <div class="card w-50">
         <br>    
-        <span>- <b>Photo</b> : </span><img src="{{$item->photo}}" alt="">
+        {{-- <span>- <b>Photo</b> : </span><img src="{{asset("$item->photo")}}" alt=""> --}}
+        @if (Storage::disk('public')->exists('img/' . $item->photo))
+        <img style="width: 40px" src="{{ asset('img/' . $item->photo) }}" alt="">
+         @else
+        <img style="width: 40px" src="{{ asset($item->photo) }}" alt="">
+        @endif
         <br>
         <span>- <b>Name</b> : <i>{{$item->name}}</i></span>
         <br>
