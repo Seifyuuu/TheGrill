@@ -70,6 +70,13 @@ class TableController extends Controller
      */
     public function update(Request $request, Table $table)
     {
+        $request->validate([
+            "name"=>["required"],
+            "address"=>["required"],
+            "address2"=>["required"],
+            "num"=>["required"],
+        ]);
+
         $table->name = $request->name;
         $table->address = $request->address;
         $table->address2 = $request->address2;        

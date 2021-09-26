@@ -71,6 +71,13 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
+        $request->validate([
+            "titre1"=>["required"],
+            "titre2"=>["required"],
+            "texte1"=>["required"],
+            "texte2"=>["required"],
+        ]);
+
         $about->texte1 = $request->texte1;
         $about->texte2 = $request->texte2;
         $about->titre1 = $request->titre1;        

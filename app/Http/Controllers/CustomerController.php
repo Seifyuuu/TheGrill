@@ -37,6 +37,13 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            "photo"=>["required"],
+            "name"=>["required"],
+            "text"=>["required"],
+            "rating"=>["required"],
+        ]);
+
         $customer = new Customer();
         $customer->name = $request->name;
         $customer->photo = $request->file("photo")->hashName();
@@ -78,6 +85,13 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
+        $request->validate([
+            "photo"=>["required"],
+            "name"=>["required"],
+            "text"=>["required"],
+            "rating"=>["required"],
+        ]);
+        
         Storage::disk("public")->delete("img/" . $customer->photo);
         $customer->photo = $request->file("photo")->hashName();
         $customer->name = $request->name;

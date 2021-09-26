@@ -1,6 +1,15 @@
 @extends("back.partials.html")
 
 @section("content")    
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 <form enctype="multipart/form-data" action="{{route("customer.update", $customer->id)}}" method="POST">
     @csrf
@@ -17,14 +26,13 @@
     <input type="text" name="text" value="{{$customer->text}}">
     <br>
     <label for="">Rating :</label>
-        <select name="rating" value="">
+        <select name="rating" value="{{$customer->rating}}">
             <option value="5">5</option>
             <option value="4">4</option>
             <option value="3">3</option>
             <option value="2">2</option>
             <option value="1">1</option>
             <option value="0">0</option>
-            <option selected>Séléctionnez une note</option>
         </select>
 
     </div>

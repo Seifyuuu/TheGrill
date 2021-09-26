@@ -43,7 +43,7 @@ Route::get('/', function () {
 
 Route::get('/back', function () {
     return view("back.home");
-});
+})->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -51,15 +51,15 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/back/about', AboutController::class);
-Route::resource('/back/service', ServiceController::class);
-Route::resource('/back/chef', ChefController::class);
-Route::resource('/back/icon', IconController::class);
-Route::resource('/back/sociallink', SociallinkController::class);
-Route::resource('/back/customer', CustomerController::class);
-Route::resource('/back/table', TableController::class);
-Route::resource('/back/heure', HeureController::class);
-Route::resource('/back/footer', FooterController::class);
+Route::resource('/back/about', AboutController::class)->middleware(['webmaster']);
+Route::resource('/back/service', ServiceController::class)->middleware(['webmaster']);
+Route::resource('/back/chef', ChefController::class)->middleware(['webmaster']);
+Route::resource('/back/icon', IconController::class)->middleware(['webmaster']);
+Route::resource('/back/sociallink', SociallinkController::class)->middleware(['webmaster']);
+Route::resource('/back/customer', CustomerController::class)->middleware(['webmaster', 'editeur']);
+Route::resource('/back/table', TableController::class)->middleware(['webmaster']);
+Route::resource('/back/heure', HeureController::class)->middleware(['webmaster']);
+Route::resource('/back/footer', FooterController::class)->middleware(['webmaster']);
 Route::resource('/back/user', UserController::class);
 
 

@@ -70,6 +70,10 @@ class HeureController extends Controller
      */
     public function update(Request $request, Heure $heure)
     {
+        $request->validate([
+            "jour"=>["required"],
+            "time"=>["required"],
+        ]);
         $heure->jour = $request->jour;
         $heure->time = $request->time;
         $heure->save();
