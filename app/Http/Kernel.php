@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\editeur;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,6 +67,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\admin::class,
         'webmaster' => \App\Http\Middleware\webmaster::class,
         'editeur' => \App\Http\Middleware\editeur::class,
+        
 
     ];
 }

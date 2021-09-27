@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class IconController extends Controller
 {
+    //     public function __construct(){
+    //     $this->middleware(['admin','webmaster']);
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,8 @@ class IconController extends Controller
      */
     public function index()
     {
-        //
+        $icons = Icon::all();
+        return view('back.icons.Allicons',compact('icons'));
     }
 
     /**
@@ -24,7 +28,7 @@ class IconController extends Controller
      */
     public function create()
     {
-        //
+        return view('back.icons.create');
     }
 
     /**
@@ -33,9 +37,15 @@ class IconController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $rq)
     {
-        //
+        $icon = new Icon;
+
+        $icon->name = $rq->name;
+
+        $icon->save();
+
+        return redirect()->route('icon.index');
     }
 
     /**
@@ -80,7 +90,12 @@ class IconController extends Controller
      */
     public function destroy(Icon $icon)
     {
+        
+        foreach( $icon->sociallinks as $link){
+            $link->delete();
+        }
         $icon->delete();
+        
 
         return redirect()->back();
     }

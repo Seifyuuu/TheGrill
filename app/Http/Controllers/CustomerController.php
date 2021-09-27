@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class CustomerController extends Controller
 {
+
+    //     public function __construct(){
+    //     $this->middleware(['editeur']);
+    // }
     /**
      * Display a listing of the resource.
      *

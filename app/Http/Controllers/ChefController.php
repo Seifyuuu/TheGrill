@@ -9,6 +9,9 @@ use PhpParser\Node\Stmt\Foreach_;
 
 class ChefController extends Controller
 {
+    //     public function __construct(){
+    //     $this->middleware(['admin','webmaster']);
+    // }
     /**
      * Display a listing of the resource.
      *

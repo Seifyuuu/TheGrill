@@ -11,16 +11,12 @@ class Icon extends Model
     use HasFactory;
     protected $table = "icons";
 
-    protected $fillable = ["name","footer_id"];
+    protected $fillable = ["name"];
 
-    public function chef(){
-        return $this->belongsTo(Chef::class);
-    }
+
     public function sociallinks(){
         return $this->hasMany(Sociallink::class);
     }
 
-    public function footer(){
-        return $this->belongsTo(Footer::class);
-    }
+
 }

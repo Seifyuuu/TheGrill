@@ -9,6 +9,9 @@ use Illuminate\Http\Request;
 
 class SociallinkController extends Controller
 {
+    //     public function __construct(){
+    //     $this->middleware(['admin','webmaster']);
+    // }
     /**
      * Display a listing of the resource.
      *
