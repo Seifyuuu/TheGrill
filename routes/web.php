@@ -52,14 +52,14 @@ Route::get('/dashboard', function () {
 
 Route::resource('/back/about', AboutController::class);
 
-Route::resource('/back/service', ServiceController::class)->middleware(['auth','admin','webmaster']);
-Route::resource('/back/chef', ChefController::class)->middleware(['auth','admin','webmaster']);
-Route::resource('/back/icon', IconController::class)->middleware(['auth','admin','webmaster']);
-Route::resource('/back/sociallink', SociallinkController::class)->middleware(['auth','admin','webmaster']);
-Route::resource('/back/customer', CustomerController::class)->middleware(['auth','admin','webmaster','editeur']);
-Route::resource('/back/table', TableController::class)->middleware(['auth','admin','webmaster']);
-Route::resource('/back/heure', HeureController::class)->middleware(['auth','admin','webmaster']);
-Route::resource('/back/footer', FooterController::class)->middleware(['auth','admin','webmaster']);
+Route::resource('/back/service', ServiceController::class)->middleware(['auth','webmaster']);
+Route::resource('/back/chef', ChefController::class)->middleware(['auth','webmaster']);
+Route::resource('/back/icon', IconController::class)->middleware(['auth','webmaster']);
+Route::resource('/back/sociallink', SociallinkController::class)->middleware(['auth','webmaster']);
+Route::resource('/back/customer', CustomerController::class)->middleware(['auth','editeur']);
+Route::resource('/back/table', TableController::class)->middleware(['auth','webmaster']);
+Route::resource('/back/heure', HeureController::class)->middleware(['auth','webmaster']);
+Route::resource('/back/footer', FooterController::class)->middleware(['auth','webmaster']);
 Route::resource('/back/user', UserController::class)->middleware(['auth','admin']);
 
 require __DIR__.'/auth.php';
